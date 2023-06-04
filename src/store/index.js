@@ -1,9 +1,9 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { configureStore } from '@reduxjs/toolkit';
-// Importa tus reducers aquí
+// Import reducers
 
 const rootReducer = {
-  // Añade tus reducers aquí
+  // reducers
 };
 
 const store = configureStore({

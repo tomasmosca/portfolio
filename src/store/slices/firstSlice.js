@@ -1,16 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  // Define el estado inicial aquí
+  // state
 };
 
-const mySlice = createSlice({
+const currSlice = createSlice({
   name: 'mySlice',
   initialState,
   reducers: {
-    // Define tus reducers aquí
+    // reducers
   },
 });
 
-export const { actions } = mySlice;
-export default mySlice.reducer;
+export const { actions } = currSlice;
+export default currSlice.reducer;
