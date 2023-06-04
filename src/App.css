@@ -1,38 +1,203 @@
-.App {
-  text-align: center;
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+
+:root {
+  /* Paleta de colores con fondo claro */
+  --color-primary: #1C3D5A;
+  --color-secondary: #4A90E2;
+  --color-accent: #F2994A;
+  --color-text-dark: #333333;
+  --color-text-light: #8C8C8C;
+
+  /* Paleta de colores con fondo oscuro y gradiente */
+  --color-background: #141416;
+  --color-text-white: #FFFFFF;
+  --color-text-secondary-light: #B3B3B3;
 }
 
-.App-logo {
-  height: 40vmin;
+body {
+  background: var(--color-background); /* Fondo oscuro */
+  color: var(--color-text-white); /* Texto blanco */
+  font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+.background {
+  background: var(--color-background);
+  color: var(--color-text-white); /* Texto blanco */
+}
+
+a {
+  color: var(--color-secondary); /* Enlaces azul claro */
+}
+
+button.primary {
+  background-color: var(--color-primary); /* Botones azul oscuro */
+  color: var(--color-text-white); /* Texto blanco */
+}
+
+button.accent {
+  background-color: var(--color-accent); /* Botones naranja */
+  color: var(--color-text-white); /* Texto blanco */
+}
+
+.scene3D-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.canvas-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.projects-link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: #54b3d6;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+.projects-link:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+a {
+  position: relative;
+}
+
+.glass-navbar {
+  background: rgba(20, 20, 22, 0.21) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+}
+
+#particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.svg-coding-box {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar-dev-icon {
+  color: #54b3d6;
+  margin-left: 30px;
+  font-size: x-large;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.arrow-icon {
+  transition: transform 0.3s ease;
+  display: inline-block;
+  transform-origin: 50% 60%;
+}
+
+.link-container:hover .arrow-icon {
+  transform: rotate(90deg);
+}
+
+.box-stack {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.slide-hr {
+  margin-top: 0px !important;
+}
+
+.sidenav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Scroll Down */
+
+.scrolldown-wrapper {
+	left: 50%;
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	transform: translate(-50%, -50%);
+}
+  
+.scrolldown {
+	border: 2px solid #FFFFFF;
+	border-radius: 30px;
+	height: 46px;
+	margin: 0 auto 8px;
+	text-align: center;
+	width: 30px;
+}
+
+.scrolldown-p1,
+.scrolldown-p2 {
+	animation-duration: 1.5s;
+	animation-name: scrolldown;
+	animation-iteration-count: infinite;
+	fill: #FFFFFF;
+}
+  
+.scrolldown-p2 {
+	animation-delay: .75s;
+}
+
+@keyframes scrolldown {
+	0% {
+		opacity: 0;
+		transform: translate(0, -8px);
+	}
+	50% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(0, 8px);
+	}
+}
+
+.scroll-text {
+  font-family: "Cabin", sans-serif;
+  letter-spacing: 8px;
   color: white;
+  animation: fadeInOut 2s linear infinite;
 }
 
-.App-link {
-  color: #61dafb;
+.fadeout {
+  left: 50%;
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	transform: translate(-50%, -50%);
+  animation: fadeOut 1s linear;
+  animation-fill-mode: forwards;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
