@@ -70,7 +70,7 @@ function Header() {
         zIndex="2"
         className="svg-coding-box"
         position="absolute"
-        right="0"
+        right="30px"
         maxWidth="1000px"
       >
         <LottieAnimation data="https://assets4.lottiefiles.com/packages/lf20_gssu2dkm.json" />
